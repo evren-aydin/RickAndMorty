@@ -18,7 +18,7 @@ function EpisodeContextProvider({ children }) {
       });
   }, []);
   return (
-    <EpisodeContext.Provider value={{ episodes }}>
+    <EpisodeContext.Provider value={{ episodes, setEpisodes }}>
       {children}
     </EpisodeContext.Provider>
   );

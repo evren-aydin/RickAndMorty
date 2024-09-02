@@ -8,7 +8,19 @@ function Header() {
               <img src="/rm512.png" alt="Logo" className="h-10 w-auto" />
             </a>
           </div>
-          <div className="w-[275px] h-[45px] flex flex-row items-center gap-8">
+          <div className="w-[495px] h-[45px] flex flex-row items-center gap-8 ">
+            <a
+              href="/location"
+              className="text-xl font-bold text-[#333333] hover:text-[#ff9800]"
+            >
+              Location
+            </a>
+            <a
+              href="/episode"
+              className="text-xl font-bold text-[#333333] hover:text-[#ff9800]"
+            >
+              Episode
+            </a>
             <a
               href="#"
               className="text-xl font-bold text-[#333333] hover:text-[#ff9800]"
