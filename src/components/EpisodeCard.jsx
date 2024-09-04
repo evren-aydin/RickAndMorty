@@ -45,11 +45,11 @@ function EpisodeCard({ episode }) {
   }, [episode]);
 
   return (
-    <div className="rounded-xl bg-gray-950 w-[750px] h-[380px] flex flex-row gap-4">
-      <div className="w-[725px] h-[380px] ml-1 bg-[#3c3e44] rounded-xl flex flex-col pt-6">
+    <div className="rounded-xl bg-gray-950 w-[750px] h-[380px] flex flex-row gap-4 lm:w-[400px] lm:h-[625px]">
+      <div className="w-[725px] h-[380px] ml-1 bg-[#3c3e44] rounded-xl flex flex-col pt-6 lm:w-[375px] lm:h-[625px]">
         <div className="w-[650px] h-[60px] mb-10 flex flex-col text-white">
           <a href="">
-            <h1 className="text-2xl pl-5 font-extrabold hover:text-[#ff9800]">
+            <h1 className="text-2xl pl-5 font-extrabold hover:text-[#ff9800] lm:text-sm">
               {episode.name} -{" "}
               <span className="text-[#ff9800]">{episode.id}</span>
             </h1>
@@ -67,7 +67,7 @@ function EpisodeCard({ episode }) {
           </a>
         </div>
 
-        <div className="w-[725px] h-[60px] flex flex-wrap text-white pl-5 items-center gap-1">
+        <div className="w-[725px] h-[60px] flex flex-wrap text-white pl-5 items-center gap-1 lm:w-[375px]">
           <p className="text-[#9e9990] font-semibold">Character names : </p>
           {characterNames.map((name, index) => (
             <p key={index} className="text-xs ">

@@ -37,7 +37,7 @@ function EpisodePage() {
         </button>
       </div>
       <div className="w-full h-full bg-[#272b33] flex justify-center flex-col items-center gap-8">
-        <div className="w-[1270px] h-full flex flex-row flex-wrap justify-center items-center gap-7">
+        <div className="w-[1270px] h-full flex flex-row flex-wrap justify-center items-center gap-7 lm:w-[600px]">
           {episodes.map((episode) => (
             <EpisodeCard key={episode.id} episode={episode} />
           ))}

@@ -71,7 +71,7 @@ function CharacterMenu() {
           <input
             type="text"
             className="w-96 hover:border-[#ff9800] hover:border-4 lm:w-[200px]"
-            placeholder="search.."
+            placeholder="Search.."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
