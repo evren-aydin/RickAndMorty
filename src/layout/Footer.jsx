@@ -7,19 +7,19 @@ function Footer() {
         <div className="w-full h-[240px]  flex flex-col items-center justify-center gap-6">
           <div className=" w-[400px] h-[45px] flex flex-row gap-3 text-sm justify-center flex-wrap">
             <a
-              href=""
+              href="https://rickandmortyapi.com/api/character"
               className="font-bold text-[#92999e] hover:text-[#ff9800]"
             >
               CHARACTER :826
             </a>
             <a
-              href=""
+              href="https://rickandmortyapi.com/api/location"
               className="font-bold text-[#92999e] hover:text-[#ff9800]"
             >
               LOCATION :126
             </a>
             <a
-              href=""
+              href="https://rickandmortyapi.com/api/episode"
               className="font-bold text-[#92999e] hover:text-[#ff9800]"
             >
               EPISODE :51

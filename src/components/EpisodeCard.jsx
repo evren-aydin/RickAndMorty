@@ -8,18 +8,36 @@ function EpisodeCard({ episode }) {
     const fetchData = async () => {
       try {
         // episode.characters dizisindeki tüm URL'lere istek yapıyoruz
-        const requests = episode.characters.map(
-          (characterUrl) => axios.get(characterUrl) // Bu satırda return eksikti
-        );
+        const requests = episode.characters.map((characterUrl) => {
+          // URL'nin geçerliliğini kontrol edebiliriz
+          if (characterUrl) {
+            return axios.get(characterUrl);
+          } else {
+            console.warn(`Invalid URL: ${characterUrl}`);
+            return null;
+          }
+        });
+
+        // Geçersiz istekleri kaldırmak için filtreleme yapıyoruz
+        const validRequests = requests.filter((request) => request !== null);
 
         // Tüm istekler tamamlandığında sonuçları topluyoruz
-        const responses = await Promise.all(requests);
+        const responses = await Promise.all(validRequests);
 
         // Gelen verilerden karakter isimlerini alıyoruz
         const names = responses.map((response) => response.data.name);
         setCharacterNames(names);
       } catch (error) {
         console.error("Error fetching character names:", error);
+        // Hata detaylarını kontrol etmek için
+        if (error.response) {
+          console.error("Response data:", error.response.data);
+          console.error("Response status:", error.response.status);
+        } else if (error.request) {
+          console.error("No response received:", error.request);
+        } else {
+          console.error("Error message:", error.message);
+        }
       }
     };
 
@@ -49,8 +67,8 @@ function EpisodeCard({ episode }) {
           </a>
         </div>
 
-        <div className="w-[725px] h-[60px] flex flex-wrap text-white pl-5 items-center">
-          <p className="text-[#9e9990] font-semibold">Character names:</p>
+        <div className="w-[725px] h-[60px] flex flex-wrap text-white pl-5 items-center gap-1">
+          <p className="text-[#9e9990] font-semibold">Character names : </p>
           {characterNames.map((name, index) => (
             <p key={index} className="text-xs ">
               {name},

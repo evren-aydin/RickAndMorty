@@ -18,7 +18,7 @@ function LocationContextProvider({ children }) {
       });
   }, []);
   return (
-    <LocationContext.Provider value={{ locations }}>
+    <LocationContext.Provider value={{ locations, setLocations }}>
       {children}
     </LocationContext.Provider>
   );
